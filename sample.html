@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #292F3F;
+    }
+
+    header {
+        width: 100vw;
+        height: 10vh;
+        /* border-top-left-radius: 32px; */
+        background: #981CEB;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    header>h1 {
+        font-family: 'Inter';
+        color: white;
+        /* font-weight: 500; */
+    }
+
+    header>img {
+        height: 6vh;
+        border-radius: 30px;
+    }
+
+    #sInp {
+        background-color: #171A23;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        padding: 5px;
+        padding-left: 10px;
+        color: white;
+        width: 60vw;
+    }
+
+    #svg {
+        width: 10vw;
+        height: 4vh;
+        position: relative;
+        right: 12px;
+        background-color: #404654;
+        border-radius: 10px;
+        /* border: 2px solid white; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #svg>svg {
+        width: 7vw;
+        /* border: solid white; */
+        /* fill: white; */
+        stroke: white;
+        stroke-width: 4;
+    }
+
+    #add {
+        width: 20px;
+        height: 20px;
+        background-color: black;
+    }
+
+    #chat-search {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        /* border: 2px solid red; */
+        height: 10vh;
+    }
+
+    #search {
+        display: flex;
+        justify-content: center;
+    }
+
+    #add {
+        height: 4vh;
+        background: #B370E7;
+        width: 4vh;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: bolder;
+        font-size: 2rem;
+    }
+
+    #cRoom {
+        /* border: 2px solid white; */
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        color: white;
+        letter-spacing: 2px;
+        font-size: 1.4rem;
+    }
+
+    #cRoom>p {
+        position: relative;
+        left: 30px;
+        font-weight: 700;
+    }
+
+    #cRoom2 {
+        /* border: 2px solid white; */
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        color: white;
+        letter-spacing: 2px;
+        font-size: 1.4rem;
+    }
+
+    #cRoom2>p {
+        position: relative;
+        left: 30px;
+        font-weight: 700;
+    }
+
+    #group-chat-slider {
+        /* border: 2px solid white;     */
+        height: 17vh;
+        padding: 10px;
+        overflow-x: visible;
+        display: flex;
+
+        /* flex-direction: column; */
+        justify-content: space-evenly;
+        align-items: top;
+    }
+
+    .gC {
+        /* border: 2px solid red; */
+        width: 25vw;
+        height: 13vh;
+        border-radius: 15px;
+        margin: 10px;
+        display: flex;
+        text-align: center;
+        color: white;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.2rem;
+        box-shadow: 4px 4px 18px black;
+    }
+
+    .gC>p {
+        font-weight: 500;
+        letter-spacing: 2px;
+    }
+
+    #heart {
+        stroke-width: 2;
+        width: 5vw;
+    }
+
+    #first {
+        background-image: linear-gradient(to top, #13d7fd, #00bdff, #009dff, #0073ff, #8f29ec);
+    }
+
+    #second {
+        background-image: linear-gradient(to top, #9d045c, #993d91, #8264bd, #5985dc, #08a3ec);
+    }
+
+    #third {
+        background-image: linear-gradient(to top, #d3d4fc, #a9dfff, #5fecff, #00f7ff, #09fdcf);
+    }
+
+    #personal-chat {
+        /* border: 2px solid white; */
+        height: 53vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+        /* align-items: center; */
+    }
+
+    .person {
+        /* border: 2px solid red; */
+        padding: 5px;
+        height: 8vh;
+        display: flex;
+    }
+
+    .image {
+        width: 15vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image>img {
+        width: 12vw;
+        border-radius: 50px;
+    }
+
+    .text {
+        width: 60%;
+        display: flex;
+        align-items: top;
+        flex-direction: column;
+        padding-left: 5px;
+        font-size: 1.8rem;
+        color: white;
+        letter-spacing: 2px;
+    }
+
+    #small {
+        font-size: 0.8rem;
+    }
+
+    .text>p {
+        position: relative;
+        left: 12px;
+        margin: 2px;
+        letter-spacing: 2px;
+    }
+
+    .lastseen {
+        width: 20vw;
+        /* border: 2px solid red; */
+        font-size: 1.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        letter-spacing: 2px;
+    }
+
+</style>
+
+<body>
+    <header>
+        <img src="logo-1.jpg" alt="">
+        <h1>DEFI SQUAD HOME</h1>
+    </header>
+    <div id="chat-search">
+        <div id="search">
+            <input type="text" name="" id="sInp" placeholder="Search...">
+            <div id="svg">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                </svg>
+            </div>
+        </div>
+
+        <div id="add">
+            +
+        </div>
+    </div>
+
+    <div id="cRoom">
+        <p>Chatrooms</p>
+    </div>
+
+    <div id="group-chat-slider">
+        <div class="gC" id="first">
+            <p>Farhan's Team</p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" id="heart"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+            </svg>
+
+        </div>
+        <div class="gC" id="second">
+            <p>Kanishk's Team</p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" id="heart"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+            </svg>
+        </div>
+        <div class="gC" id="third">
+            <p>NH2's Team</p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" id="heart"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+            </svg>
+        </div>
+    </div>
+
+    <div id="cRoom2">
+        <p>Personal Chat</p>
+    </div>
+
+    <div id="personal-chat">
+        <div class="person">
+            <div class="image"><img src="logo-1.jpg" alt=""></div>
+            <div class="text">
+                <p>Farhan</p>
+                <p id="small">Hello</p>
+            </div>
+            <div class="lastseen">
+                <p>12 Aug</p>
+            </div>
+        </div>
+        <div class="person">
+            <div class="image"><img src="logo-1.jpg" alt=""></div>
+            <div class="text">
+                <p>Kanishk</p>
+                <p id="small">Hello</p>
+            </div>
+            <div class="lastseen">
+                <p>12 Aug</p>
+            </div>
+        </div>
+        <div class="person">
+            <div class="image"><img src="logo-1.jpg" alt=""></div>
+            <div class="text">
+                <p>Harshita</p>
+                <p id="small">Hello</p>
+            </div>
+            <div class="lastseen">
+                <p>12 Aug</p>
+            </div>
+        </div>
+        <div class="person">
+            <div class="image"><img src="logo-1.jpg" alt=""></div>
+            <div class="text">
+                <p>Hardick</p>
+                <p id="small">Hello</p>
+            </div>
+            <div class="lastseen">
+                <p>12 Aug</p>
+            </div>
+        </div>
+        <div class="person">
+            <div class="image"><img src="logo-1.jpg" alt=""></div>
+            <div class="text">
+                <p>Nitya</p>
+                <p id="small">Hello</p>
+            </div>
+            <div class="lastseen">
+                <p>12 Aug</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
